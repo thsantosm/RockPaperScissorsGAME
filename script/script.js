@@ -1,7 +1,9 @@
 var hero = prompt("Jogador: Digite Pedra, Papel ou Tesoura");
+var hero = hero.trim();
 var hero = hero.toLowerCase();
-const form = document.querySelector('#form')
-let oponente = Math.floor(Math.random() * 3)
+const form = document.querySelector('#form');
+let oponente = Math.floor(Math.random() * 3);
+
 
 if (oponente == 0) {
     oponente = 'Pedra'    
@@ -16,7 +18,8 @@ else {
 
 
 document.getElementById('play').addEventListener("click", function(event){
-     
+    window.scrollTo(0, 0)
+    
     if (hero == "pedra" && oponente == 'Papel') {
         document.querySelector('#result1').innerHTML = oponente + (' 📄, Você perdeu 😭');
        
@@ -44,7 +47,6 @@ document.getElementById('play').addEventListener("click", function(event){
     }
     else {
         document.querySelector('#result1').innerHTML = oponente + (', Você ganhou 🥳🥳🎉')}
-        document.querySelector('#corpo').style.backgroundcolor = 'green';
        
 })
 
